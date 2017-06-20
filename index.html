@@ -15,24 +15,24 @@
 
 		//可以区分加载错误和其他错误。如果错误全部捕捉则不需要判断
 		if (!(e instanceof ErrorEvent)) {
-            errors.push({
-    			link:encodeURIComponent(e.srcElement.outerHTML),//失效链接地址
-    			parentEl:e.srcElement.parentElement.nodeName,	//获取父级名称
-    			currentAddr:encodeURIComponent(location.href)	//获取出错页面地址
-    		  });
+			errors.push({
+				link:encodeURIComponent(e.srcElement.outerHTML),//失效链接地址
+				parentEl:e.srcElement.parentElement.nodeName,	//获取父级名称
+				currentAddr:encodeURIComponent(location.href)	//获取出错页面地址
+			  });
 
-        }else{
-        	//js语法错误等
-        	errors.push({
-        		line:e.lineno,		//行号
-        		colno:e.colno,		//位置
-        		message:e.message,	//错误信息
-        		filename:e.filename	//引发错误文件
-        	})
-        	
-        }
+		}else{
+			//js语法错误等
+			errors.push({
+				line:e.lineno,		//行号
+				colno:e.colno,		//位置
+				message:e.message,	//错误信息
+				filename:e.filename	//引发错误文件
+			})
 
-       console.log(e,errors)
+		}
+
+	       console.log(e,errors)
 
 	},true)//需要设置为捕获方式 不然只能监测到js错误 文件是否加载不能监测到
 </script>
