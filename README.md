@@ -1,3 +1,5 @@
+值得注意的有几个地方:
+
 # -
 加载错误的event中 canBubble: false, cancelable: false。自然用通常的冒泡机制不能捕捉加载错误，需要用捕获的方式来捕捉加载错误。
 
